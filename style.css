@@ -1,0 +1,374 @@
+/* General Styles */
+body {
+    font-family: 'Cairo', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6;
+    color: #333;
+    direction: rtl;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    background-color: #ffffff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center; /* Center the logo */
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky; /* Keep header sticky */
+    top: 0;
+    z-index: 1000;
+    min-height: 80px; /* Increased min-height for larger logo */
+    position: relative; /* For absolute positioning of language switcher */
+}
+
+#header-logo {
+    height: 80px; /* Further increased height */
+    width: auto;
+    max-width: 320px; /* Further increased max-width */
+}
+
+.language-switcher {
+    position: absolute;
+    right: 20px; /* For RTL, adjust if LTR is primary */
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1001;
+}
+
+.language-switcher button {
+    background-color: #006A4E;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.language-switcher button:hover {
+    background-color: #004D38;
+}
+
+main {
+    text-align: center;
+}
+
+#lab-summary-container {
+    position: relative;
+    width: 100%;
+    min-height: auto; 
+    padding-top: 20px; 
+    padding-bottom: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0; 
+}
+
+.slider-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.slider-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    opacity: 0;
+    transition: opacity 1s ease-in-out; 
+}
+
+.slider-image.active {
+    opacity: 1;
+}
+
+.summary-overlay-content {
+    position: relative;
+    z-index: 2;
+    color: #ffffff; 
+    text-align: center;
+    padding: 20px; 
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+}
+
+.summary-overlay-content h2 {
+    font-size: 2.0em; 
+    margin-top: 0; 
+    margin-bottom: 15px;
+    color: #f0f0f0;
+}
+
+.summary-overlay-content p {
+    font-size: 1.0em; 
+    line-height: 1.6;
+    color: #e0e0e0;
+}
+
+#branch-selection {
+    padding: 30px; 
+}
+
+#branch-selection h1 {
+    color: #006A4E;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+}
+
+.branch-options {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.branch-card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 280px;
+    border-left: 5px solid #006A4E;
+}
+
+.branch-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+}
+
+.branch-card h2 {
+    color: #00573D;
+    margin-top: 0;
+    font-size: 1.8em;
+}
+
+#branch-details {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: 30px; 
+    text-align: right;
+}
+
+#branch-details.hidden {
+    display: none;
+}
+
+#back-button {
+    background-color: #006A4E;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#back-button:hover {
+    background-color: #004D38;
+}
+
+#branch-name-display {
+    color: #006A4E;
+    margin-bottom: 25px;
+    font-size: 2.2em;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.detail-item {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid #e0e0e0;
+}
+
+.detail-item i {
+    font-size: 1.8em;
+    color: #006A4E;
+    width: 30px;
+    text-align: center;
+}
+
+.detail-item p {
+    margin: 0;
+    font-weight: bold;
+    color: #555;
+}
+
+.detail-item a {
+    color: #007bff;
+    text-decoration: none;
+    word-break: break-all;
+}
+
+.detail-item a:hover {
+    text-decoration: underline;
+}
+
+.health-theme-banner {
+    background-color: #e6f7f2;
+    color: #00573D;
+    padding: 20px;
+    margin: 30px;
+    border-radius: 8px;
+    border-left: 5px solid #006A4E;
+}
+
+.health-theme-banner h3 {
+    margin-top: 0;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+body[dir="ltr"] header {
+    /* justify-content: space-between; No longer needed, logo is centered */
+}
+
+body[dir="ltr"] .language-switcher {
+    right: auto; /* Remove RTL specific positioning */
+    left: 20px; /* Position to the left for LTR */
+}
+
+body[dir="ltr"] #branch-details {
+    text-align: left;
+}
+
+body[dir="ltr"] #back-button i {
+    transform: scaleX(-1);
+}
+
+body[dir="ltr"] .branch-card {
+    border-left: none;
+    border-right: 5px solid #006A4E;
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 10px 15px;
+        min-height: 70px; /* Adjusted for larger logo */
+    }
+    #header-logo {
+        height: 50px; /* Adjusted for tablets */
+        max-width: 200px;
+    }
+    .language-switcher {
+        right: 15px; /* Adjust for padding */
+    }
+    body[dir="ltr"] .language-switcher {
+        left: 15px; /* Adjust for padding */
+    }
+    #lab-summary-container {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    .summary-overlay-content {
+        width: 90%;
+        padding: 15px;
+    }
+    .summary-overlay-content h2 {
+        font-size: 1.8em;
+    }
+    .summary-overlay-content p {
+        font-size: 0.9em;
+    }
+    .branch-options {
+        flex-direction: column;
+        align-items: center;
+    }
+    .branch-card {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+    #branch-selection h1 {
+        font-size: 2em;
+    }
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+    #branch-selection, #branch-details, .health-theme-banner {
+        padding: 15px;
+        margin-left: 15px; 
+        margin-right: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 8px 10px;
+        min-height: 60px; /* Adjusted for larger logo on mobile */
+    }
+    #header-logo {
+        height: 40px; /* Adjusted for mobile */
+        max-width: 150px;
+    }
+    .language-switcher {
+        right: 10px; /* Adjust for padding */
+    }
+    body[dir="ltr"] .language-switcher {
+        left: 10px; /* Adjust for padding */
+    }
+    .language-switcher button {
+        font-size: 0.8em;
+        padding: 6px 10px;
+    }
+    #lab-summary-container {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .summary-overlay-content h2 {
+        font-size: 1.5em;
+    }
+    .summary-overlay-content p {
+        font-size: 0.85em;
+    }
+    #branch-selection h1 {
+        font-size: 1.8em;
+    }
+    .branch-card h2 {
+        font-size: 1.5em;
+    }
+    #branch-name-display {
+        font-size: 1.8em;
+    }
+}
+
