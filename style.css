@@ -1,0 +1,254 @@
+/* General Styles */
+body {
+    font-family: 'Cairo', sans-serif; /* Modern Arabic-friendly font */
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6; /* Light grey-greenish background */
+    color: #333;
+    direction: rtl; /* Default to Arabic */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    background-color: #ffffff; /* White header */
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+#logo {
+    height: 90px;
+}
+
+.language-switcher button {
+    background-color: #006A4E; /* Dark Green from a common medical palette */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.language-switcher button:hover {
+    background-color: #004D38; /* Darker green on hover */
+}
+
+main {
+    padding: 30px;
+    text-align: center;
+}
+
+/* Branch Selection Section */
+#branch-selection h1 {
+    color: #006A4E; /* Dark Green */
+    margin-bottom: 30px;
+    font-size: 2.5em;
+}
+
+.branch-options {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.branch-card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 280px; /* Fixed width for cards */
+    border-left: 5px solid #006A4E; /* Green accent */
+}
+
+.branch-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+}
+
+.branch-card h2 {
+    color: #00573D; /* Slightly lighter green */
+    margin-top: 0;
+    font-size: 1.8em;
+}
+
+/* Branch Details Section */
+#branch-details {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-top: 30px;
+    text-align: right; /* For Arabic content */
+}
+
+#branch-details.hidden {
+    display: none;
+}
+
+#back-button {
+    background-color: #006A4E;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#back-button:hover {
+    background-color: #004D38;
+}
+
+#branch-name-display {
+    color: #006A4E;
+    margin-bottom: 25px;
+    font-size: 2.2em;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.detail-item {
+    background-color: #f9f9f9; /* Very light grey for item background */
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between icon and text */
+    border: 1px solid #e0e0e0;
+}
+
+.detail-item i {
+    font-size: 1.8em;
+    color: #006A4E; /* Green icons */
+    width: 30px; /* Fixed width for icons */
+    text-align: center;
+}
+
+.detail-item p {
+    margin: 0;
+    font-weight: bold;
+    color: #555;
+}
+
+.detail-item a {
+    color: #007bff; /* Standard link blue, can be changed */
+    text-decoration: none;
+    word-break: break-all; /* Prevent long links from breaking layout */
+}
+
+.detail-item a:hover {
+    text-decoration: underline;
+}
+
+/* Health Protection & Early Detection Theme */
+.health-theme-banner {
+    background-color: #e6f7f2; /* Light mint green */
+    color: #00573D;
+    padding: 20px;
+    margin: 30px 0;
+    border-radius: 8px;
+    border-left: 5px solid #006A4E;
+}
+
+.health-theme-banner h3 {
+    margin-top: 0;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* RTL and LTR specific styles */
+body[dir="ltr"] #branch-details {
+    text-align: left;
+}
+
+body[dir="ltr"] #back-button i {
+    transform: scaleX(-1); /* Flip arrow for LTR */
+}
+
+body[dir="ltr"] .branch-card {
+    border-left: none;
+    border-right: 5px solid #006A4E; /* Green accent on the other side for LTR */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    #logo {
+        margin-bottom: 10px;
+    }
+
+    .branch-options {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .branch-card {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    #branch-selection h1 {
+        font-size: 2em;
+    }
+
+    .details-grid {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+    }
+
+    main {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    #logo {
+        height: 160px; /* Increased logo size for mobile */
+        margin-bottom: 15px; /* Adjusted margin for better spacing */
+    }
+    #branch-selection h1 {
+        font-size: 1.8em;
+    }
+    .branch-card h2 {
+        font-size: 1.5em;
+    }
+    #branch-name-display {
+        font-size: 1.8em;
+    }
+    .language-switcher button {
+        font-size: 0.9em;
+        padding: 8px 12px;
+    }
+}
+
