@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate="siteTitle">مختبرات بيوستار - اختر الفرع</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <!-- Logo removed from header as per request -->
+        <div class="language-switcher">
+            <button id="lang-toggle" data-translate="langSwitch">English</button>
+        </div>
+    </header>
+
+    <main>
+        <section id="lab-summary-container"> 
+            <div class="slider-background">
+                <img src="images/slider/lab_image_1.jpeg" class="slider-image active" alt="Lab Background 1">
+                <img src="images/slider/lab_image_2.jpeg" class="slider-image" alt="Lab Background 2">
+                <img src="images/slider/lab_image_3.jpeg" class="slider-image" alt="Lab Background 3">
+            </div>
+            <div class="summary-overlay-content">
+                <img src="images/logo_transparent.png" alt="Biostar Labs Logo" id="summary-logo"> <!-- Changed to transparent logo -->
+                <h2 data-translate="labSummaryTitle">عن مختبر بيوستار</h2>
+                <p data-translate="labSummaryText">أسس مختبر بيوستار مطلع العام 2019 من كادر ذو خبرة أكثر من 25 عام في مجال المختبرات الطبية واتخذ مختبر بيوستار لنفسه مكانة متميزة بين افضل الوجهات الطبية ليكون احد افضل المختبرات لخدمة المرضي المحليين والاقليميين والدوليين كما نسعى نقدم أفضل الخدمات الطبية المخبرية لعملائنا و نفخر بالتزامنا بأن تكون صحة المريض هي اولى اولوياتنا و ان تكون التجربة المتميزة للمريض هي مقياس نجاحنا.</p>
+            </div>
+        </section>
+
+        <section id="branch-selection">
+            <h1 data-translate="selectBranchTitle">اختر الفرع</h1>
+            <div class="branch-options">
+                <div class="branch-card" data-branch="khilda">
+                    <h2 data-translate="khildaBranch">فرع خلدا</h2>
+                </div>
+                <div class="branch-card" data-branch="5thcircle">
+                    <h2 data-translate="fifthCircleBranch">فرع الدوار الخامس</h2>
+                </div>
+            </div>
+        </section>
+
+        <section id="branch-details" class="hidden">
+            <button id="back-button" data-translate="backButton"><i class="fas fa-arrow-right"></i> رجوع</button>
+            <h2 id="branch-name-display"></h2>
+            <div class="details-grid">
+                <div class="detail-item">
+                    <i class="fas fa-phone"></i>
+                    <p data-translate="phoneLabel">الهاتف:</p>
+                    <a id="branch-phone" href=""></a>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p data-translate="locationLabel">الموقع:</p>
+                    <a id="branch-location" href="" target="_blank"></a>
+                </div>
+                <div class="detail-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <p data-translate="whatsappLabel">واتساب:</p>
+                    <a id="branch-whatsapp" href="" target="_blank"></a>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-home"></i>
+                    <p data-translate="homeVisitLabel">خدمة منزلية:</p>
+                    <a id="branch-home-visit" href=""></a>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-envelope"></i>
+                    <p data-translate="emailLabel">الإيميل:</p>
+                    <a id="branch-email" href=""></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p data-translate="footerText">&copy; 2025 مختبرات بيوستار. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
